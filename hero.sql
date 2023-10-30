@@ -173,3 +173,9 @@ WHERE h.state = 'active';
 SELECT hero_name
 FROM heroes
 WHERE classification = 'archer';
+
+SELECT h.class AS hero_class, AVG(p.player_level) AS avg_player_level
+FROM players p
+JOIN heroes h ON p.hero_id = h.hero_id
+GROUP BY h.class
+ORDER BY avg_player_level DESC;
