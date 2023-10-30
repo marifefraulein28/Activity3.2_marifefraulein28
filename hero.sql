@@ -164,3 +164,8 @@ WHERE hero_id = 1;
 
 DELETE FROM items
 WHERE hero_id = 1;
+
+SELECT p.player_name, h.hero_name
+FROM players p
+JOIN heroes h ON p.hero_id = h.hero_id
+WHERE h.state = 'active';
